@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+    <link rel="stylesheet" href="../CSS/DangNhap.css">
+    <link rel="shortcut icon" href="../IMG/TrangChu08.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Seymour+One&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/3e2bcf7815.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Coiny&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="Login">
+        <h1>LOG IN</h1>
+        <div class="input-container">
+            <i class="fa-regular fa-circle-user"></i>
+            <input type="text" id="UserName" placeholder="UserName" maxlength="50" minlength="1">
+        </div>
+        <hr>
+        <div class="input-container">
+            <i class="fa-solid fa-lock"></i>
+            <input type="password" id="PassWord" placeholder="PassWord" maxlength="15" minlength="1">
+            <span class="displaypass">
+                <img src="../IMG/65000.png" alt="" id="checkpassword" onclick="displaypass()" width="20px" height="25px">
+            </span>
+        </div>
+        <hr>
+        <div class="function-login">
+            <input type="checkbox" name="SavePassWord" id="SavePassWord"><span>Remember Me</span>
+            <a href="#" class="forgotpassword">Forgot Password ?</a>
+            <button type="button" onclick="DangNhap()" class="DangNhap" id="loginBtn">Đăng Nhập</button>
+        </div>
+    </div>
+    <script src="../JS/DangNhap.js"></script>
+</body>
+</html>

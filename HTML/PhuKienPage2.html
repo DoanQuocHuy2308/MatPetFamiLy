@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phụ Kiện - MẬT PET FAMILY</title>
+    <link rel="shortcut icon" href="../IMG/TrangChu08.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../CSS/PhuKien.css">
+    <script src="https://kit.fontawesome.com/3e2bcf7815.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Coiny&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="">
+                    <img src="../IMG/TrangChu/TrangChu08.png" style="width: 215px; height: 213px;" alt="logo">
+                </a>
+            </div>
+            <nav>
+                <div class="function">
+                    <div class="menu">
+                        <ul class="function-menu">
+                            <li><a href="http://127.0.0.1:3000/DuAn/MatPetFamily/HTML/TrangChu.html">TRANG CHỦ</a></li>
+                            <li><a href="http://127.0.0.1:3000/DuAn/MatPetFamily/HTML/ThuCung.html" class="dropdown">THÚ CƯNG</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Chó Alaska Malamute</a></li>
+                                    <li><a href="#">Chó Beagle</a></li>
+                                    <li><a href="#">Chó Corgi</a></li>
+                                    <li><a href="#">Chó Golden Retriever</a></li>
+                                    <li><a href="#">Chó Husky Siberian</a></li>
+                                    <li><a href="#">Chó Phốc Sóc – Pomeranian</a></li>
+                                    <li><a href="#">Chó Poodle</a></li>
+                                    <li><a href="#">Chó Pug</a></li>
+                                    <li><a href="#">Chó Samoyed</a></li>
+                                    <li><a href="#">Mèo Anh (Dài + Ngắn)</a></li>
+                                    <li><a href="#">Mèo Chân Ngắn</a></li>
+                                    <li><a href="#">Mèo Tai Cụp</a></li>
+                                </ul></li>
+                            <li style="background-color: #de8ebe;"><a href="#"  style="color: #fff;">PHỤ KIỆN</a></li>
+                            <li>
+                                <a href="http://127.0.0.1:3000/DuAn/MatPetFamily/HTML/DichVu.html" class="dropdown">DỊCH VỤ</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="http://127.0.0.1:3000/DuAn/MatPetFamily/HTML/DichVu.html">ĐẤU GIÁ THÚ CƯNG - TỪ THIỆN</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="http://127.0.0.1:3000/DuAn/MatPetFamily/HTML/GioiThieu.html">GIỚI THIỆU</a></li>
+                            <li><a href="http://127.0.0.1:3000/DuAn/MatPetFamily/HTML/LienHe.html">LIÊN HỆ</a></li>
+                        </ul>
+                    </div>
+                    <div class="menu_Cart">
+                        <div class="menu_Cart_Boder">
+                            <button type="button" onclick="Cart()"><i class="fa-solid fa-bag-shopping fa-fw"></i></button>
+                        </div>
+                    </div>
+                    <div class="function-login">
+                        <div class="login" id="login">
+                            <a href="http://127.0.0.1:3000/DuAn/MatPetFamily/HTML/DangNhap.html" onclick="DangNhap()">Đăng Nhập</a>
+                            <a href="http://127.0.0.1:3000/DuAn/MatPetFamily/HTML/DangNhap.html" onclick="DangNhap()">Đăng Ký</a>
+                        </div>
+                        <p id="Name"></p>
+                    </div>
+                    
+                    <div class="cart" id="cart">
+                        <div class="function-close">
+                            <button id="close" onclick="dongform()"><i class="fa-regular fa-circle-xmark"></i></button>
+                        </div>
+                        <h2>Giỏ Hàng</h2>
+                        <ul id="cart-items">
+
+                        </ul>
+                        <p id="total">Tổng tiền: 0₫</p>
+                        <button id="ThanhToan" onclick="ThanhToan()">Thanh Toán</button>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="panel-item">
+                        <img id="IMG" src="../IMG/TrangChu/TrangChu09.jpg" alt="">
+                        <div class="panel-button">
+                            <button class="comeback" onclick="comeback()"><</button>
+                            <button class="next" onclick="next()">></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="function-search">
+                    <div class="select" onclick="toggleDropdown()">
+                        <span>All Categories</span>
+                        <ul class="dropdown-combobox">
+                            <li class="active"><a class="select-search" href="#" data-filter="">All Categories</a></li>
+                            <li class=""><a class="select-search" href="#">Chó</a></li>
+                            <li><a class="select-search" href="#">Mèo</a></li>
+                            <li><a class="select-search" href="#">Phụ Kiện</a></li>
+                            <li><a class="select-search" href="#">Thức Ăn</a></li>
+                            <li><a class="select-search" href="#">Dịch Vụ</a></li>
+                        </ul>
+                    </div>
+                    <div class="search">
+                        <input type="text" placeholder="Tìm Kiếm..."><button type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <div class="wrap-bread-crumb">
+        <div class="container">
+            <div class="bread-crumb">
+                <a href="http://127.0.0.1:3000/DuAn/MatPetFamily/HTML/TrangChu.html">Trang chủ</a><span>Phụ Kiện</span>		
+            </div>
+        </div>
+    </div>
+    <main>
+        <section>
+            <aside>
+                <div class="sidebar">
+                    <div class="sidebar-info">
+                        <h3>Danh Mục Sản Phẩm</h3>
+                        <ul class="product">
+                            <li class="product-iteam">
+                                <a href="https://matpetfamily.com/danh-muc-san-pham/balo/">Balo</a>
+                                <span>(9)</span>
+                            </li>
+                            <li class="product-iteam">
+                                <a href="">Cát Vệ Sinh</a>
+                                <span>(7)</span>
+                            </li>
+                            <li class="product-iteam">
+                                <a href="">Chuồng</a>
+                                <span>(17)</span>
+                            </li>
+                            <li class="product-iteam">
+                                <a href="">Danh Mục Cún</a>
+                                <span>(671)</span>
+                            </li>
+                            <li class="product-iteam">
+                                <a href="">Danh Mục Mèo</a>
+                                <span>(69)</span>
+                            </li>
+                            <li class="product-iteam">
+                                <a href="">Dây Vòng Cổ</a>
+                                <span>(1)</span>
+                            </li>
+                            <li class="product-iteam">
+                                <a href="">Dịch Vụ</a>
+                                <span>(1)</span>
+                            </li>
+                            <li class="product-iteam">
+                                <a href="">Mỹ Phẩm & Làm Đẹp</a>
+                                <span>(43)</span>
+                            </li>
+                            <li class="product-iteam">
+                                <a href="">Nệm</a>
+                                <span>(55)</span>
+                            </li>
+                            <li class="product-iteam">
+                                <a href="" style="color: #de8ebe;">Phụ Kiện</a>
+                                <span>(231)</span>
+                                <ul class="product-iteam-accessory">
+                                    <li class="accessory-iteam">
+                                        <a href="">Áo</a>
+                                        <span>(16)</span>
+                                    </li>
+                                    <li class="accessory-iteam">
+                                        <a href="">Bàn Cào</a>
+                                        <span>(8)</span>
+                                    </li>
+                                    <li class="accessory-iteam">
+                                        <a href="">Bát</a>
+                                        <span>(16)</span>
+                                    </li>
+                                    <li class="accessory-iteam">
+                                        <a href="">Dây Dắt</a>
+                                        <span>(8)</span>
+                                    </li>
+                                    <li class="accessory-iteam">
+                                        <a href="">Đồ Chơi</a>
+                                        <span>(14)</span>
+                                    </li>
+                                    <li class="accessory-iteam">
+                                        <a href="">Khay vệ sinh</a>
+                                        <span>(6)</span>
+                                    </li>
+                                    <li class="accessory-iteam">
+                                        <a href="">Vòng Cổ</a>
+                                        <span>(24)</span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="product-iteam">
+                                <a href="">Thực Phẩm</a>
+                                <span>(167)</span>
+                            </li>
+                            <li class="product-iteam">
+                                <a href="">Túi Vận Chuyển</a>
+                                <span>(7)</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="price">
+                        <h3>Giá</h3>
+                        <form method="get" action="https://matpetfamily.com/danh-muc-san-pham/danh-muc-cun/">
+                            <div class="function-line-price">
+                                <div class="line-price" style="left: 0%; width: 100%;">
+                                    <div class="tab-price-left" tabindex="0" style="left: 0%;"></div>
+                                    <div class="tab-price-right" tabindex="0" style="left: 94%;"></div>
+                                </div>
+                            </div>
+                            <div class="function-price">
+                                <button>Lọc</button>
+                                <div class="span-price">
+                                    <p>10.000₫</p>
+                                    <i class="space">–</i>
+                                    <p>18.000.000₫</p>
+                                </div>
+                            </div>
+                        </form>
+                        <h3 style="margin-top: 10px;">Màu Sắc</h3>
+                    </div>
+                </div>
+            </aside>
+            <article>
+                <div class="title-page">
+                    <h1>Phụ Kiện</h1>
+                    <ul class="function-page">
+                        <li class="function-page-iteam">
+                            <span>Sắp Xếp:</span>
+                            <select name="select-box" id="select-box">
+                                <option value="Sắp Xếp Theo Độ Phổ Biến">Sắp Xếp Theo Độ Phổ Biến</option>
+                                <option value="Sắp Xếp Theo Điểm Rating">Sắp Xếp Theo Điểm Rating</option>
+                                <option value="Sắp Xếp Theo Sản Phẩm Mới">Sắp Xếp Theo Sản Phẩm Mới</option>
+                                <option value="Sắp Xếp Giá Từ: Thấp Đến Cao">Sắp Xếp Giá Từ: Thấp Đến Cao</option>
+                                <option value="Sắp Xếp Giá Từ: Cao Đến Thấp">Sắp Xếp Giá Từ: Cao Đến Thấp</option>
+                            </select>
+                        </li>
+                        <li class="function-page-iteam">
+                            <div class="dropdown-box">
+                                <a href="#" class="dropdown-box-title">
+                                    <span>Số Sản Phẩm: </span>
+                                    <span class="silver-number">16</span>
+                                </a>
+                                <ul class="dropdown-list">
+                                    <li><a href="https://matpetfamily.com/danh-muc-san-pham/danh-muc-cun/?number=16">16</a></li>
+                                    <li><a href="http://matpetfamily.com/danh-muc-san-pham/danh-muc-cun/?&number=10">10</a></li>
+                                    <li><a href="http://matpetfamily.com/danh-muc-san-pham/danh-muc-cun/?&number=9"> 9</a></li>
+                                    <li><a href="http://matpetfamily.com/danh-muc-san-pham/danh-muc-cun/?&number=12">12</a></li>
+                                    <li><a href="http://matpetfamily.com/danh-muc-san-pham/danh-muc-cun/?&number=18">18</a></li>
+                                    <li><a href="http://matpetfamily.com/danh-muc-san-pham/danh-muc-cun/?&number=24">24</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="function-page-iteam">
+                            <div class="view-type">
+                                <span>Chế độ hiển thị: </span>
+                                <a href="http://127.0.0.1:3000/DuAn/MatPetFamily/HTML/ThuCung.html" class="view-type-grid">
+                                    <i class="fa-solid fa-table-cells-large" style="color: #fff;"></i>
+                                </a>
+                                <a href="http://matpetfamily.com/danh-muc-san-pham/danh-muc-cun/?&type=list">
+                                    <i class="fa-solid fa-bars"></i>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="product" id="product">
+                    <div class="article-product">
+                        <div class="article-iteam">
+                            <div class="product-iteam">
+                                <div class="product-thumb">
+                                    <div class="product-thumb-img"><a href="#">
+                                        <div class="img">
+                                            <img src="../IMG/ThuCung/ThuCung01.jpg" alt="img" width="270px" height="270px">
+                                        </div>
+                                        </a>
+                                        <div class="function-icon">
+                                            <a href="#"><i class="fa-regular fa-heart"><div class="tooltip">Yêu Thích</div></i></a>
+                                            <a href="#" ><i class="fa-solid fa-magnifying-glass"><div class="tooltip">Xem Nhanh</div></i></a>
+                                        </div>
+                                        <div class="function-buy">
+                                            <div class="function-buy-boder">
+                                                <button onclick="buy(this)"><span>Mua Hàng</span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-info-id">
+                                        <span>ID:12185923</span>
+                                        <div class="product-info-rate">
+                                            <i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <h3><a href="#">ALASKA NÂU ĐỎ BÉO Ú</a></h3>
+                                    <p>17.000.000₫</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="article-iteam">
+                            <div class="product-iteam">
+                                <div class="product-thumb">
+                                    <div class="product-thumb-img"><a href="#">
+                                        <div class="img">
+                                            <img src="../IMG/ThuCung/ThuCung02.jpg" alt="img" width="270px" height="270px">
+                                        </div>
+                                        </a>
+                                        <div class="function-icon">
+                                            <a href="#"><i class="fa-regular fa-heart"><div class="tooltip">Yêu Thích</div></i></a>
+                                            <a href="#" ><i class="fa-solid fa-magnifying-glass"><div class="tooltip">Xem Nhanh</div></i></a>
+                                        </div>
+                                        <div class="function-buy">
+                                            <div class="function-buy-boder">
+                                                <button onclick="buy(this)"><span>Mua Hàng</span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-info-id">
+                                        <span>ID:SP00083</span>
+                                        <div class="product-info-rate">
+                                            <i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <h3><a href="#">Alaska hồng phấn siêu cute</a></h3>
+                                    <p>18.000.000₫</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="article-iteam">
+                            <div class="product-iteam">
+                                <div class="product-thumb">
+                                    <div class="product-thumb-img"><a href="#">
+                                        <div class="img">
+                                            <img src="../IMG/ThuCung/ThuCung03.jpg" alt="img" width="270px" height="270px">
+                                        </div>
+                                        </a>
+                                        <div class="function-icon">
+                                            <a href="#"><i class="fa-regular fa-heart"><div class="tooltip">Yêu Thích</div></i></a>
+                                            <a href="#" ><i class="fa-solid fa-magnifying-glass"><div class="tooltip">Xem Nhanh</div></i></a>
+                                        </div>
+                                        <div class="function-buy">
+                                            <div class="function-buy-boder">
+                                                <button onclick="buy(this)"><span>Mua Hàng</span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-info-id">
+                                        <span>ID:SP00085</span>
+                                        <div class="product-info-rate">
+                                            <i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <h3><a href="#">Alaska nâu đực đẹp trai siêu cấp</a></h3>
+                                    <p>20.000.000₫</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="article-product" id="article-product">
+                        <div class="article-iteam">
+                            <div class="product-iteam">
+                                <div class="product-thumb">
+                                    <div class="product-thumb-img"><a href="#">
+                                        <div class="img">
+                                            <img src="../IMG/ThuCung/ThuCung04.jpg" alt="img" width="270px" height="270px">
+                                        </div>
+                                        </a>
+                                        <div class="function-icon">
+                                            <a href="#"><i class="fa-regular fa-heart"><div class="tooltip">Yêu Thích</div></i></a>
+                                            <a href="#" ><i class="fa-solid fa-magnifying-glass"><div class="tooltip">Xem Nhanh</div></i></a>
+                                        </div>
+                                        <div class="function-buy">
+                                            <div class="function-buy-boder">
+                                                <button onclick="buy(this)"><span>Mua Hàng</span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-info-id">
+                                        <span>ID:SP00086</span>
+                                        <div class="product-info-rate">
+                                            <i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <h3><a href="#">SAMOYED SIÊU CUTE</a></h3>
+                                    <p>12.000.000₫</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="article-iteam">
+                            <div class="product-iteam">
+                                <div class="product-thumb">
+                                    <div class="product-thumb-img"><a href="#">
+                                        <div class="img">
+                                            <img src="../IMG/ThuCung/ThuCung05.jpg" alt="img" width="270px" height="270px">
+                                        </div>
+                                        </a>
+                                        <div class="function-icon">
+                                            <a href="#"><i class="fa-regular fa-heart"><div class="tooltip">Yêu Thích</div></i></a>
+                                            <a href="#" ><i class="fa-solid fa-magnifying-glass"><div class="tooltip">Xem Nhanh</div></i></a>
+                                        </div>
+                                        <div class="function-buy">
+                                            <div class="function-buy-boder">
+                                                <button onclick="buy(this)"><span>Mua Hàng</span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-info-id">
+                                        <span>ID:SP00084</span>
+                                        <div class="product-info-rate">
+                                            <i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <h3><a href="#">HUSKY ĐEN</a></h3>
+                                    <p>13.000.000₫</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="article-iteam">
+                            <div class="product-iteam">
+                                <div class="product-thumb">
+                                    <div class="product-thumb-img"><a href="#">
+                                        <div class="img">
+                                            <img src="../IMG/ThuCung/ThuCung06.jpg" alt="img" width="270px" height="270px">
+                                        </div>
+                                        </a>
+                                        <div class="function-icon">
+                                            <a href="#"><i class="fa-regular fa-heart"><div class="tooltip">Yêu Thích</div></i></a>
+                                            <a href="#" ><i class="fa-solid fa-magnifying-glass"><div class="tooltip">Xem Nhanh</div></i></a>
+                                        </div>
+                                        <div class="function-buy">
+                                            <div class="function-buy-boder">
+                                                <button onclick="buy(this)"><span>Mua Hàng</span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-info-id">
+                                        <span>ID:17669219</span>
+                                        <div class="product-info-rate">
+                                            <i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <h3><a href="#">HUSKY ĐẠI NGÁO Ú NU</a></h3>
+                                    <p>15.000.000₫</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="article-product">
+                        <div class="article-iteam">
+                            <div class="product-iteam">
+                                <div class="product-thumb">
+                                    <div class="product-thumb-img"><a href="#">
+                                        <div class="img">
+                                            <img src="../IMG/ThuCung/ThuCung07.jpg" alt="img" width="270px" height="270px">
+                                        </div>
+                                        </a>
+                                        <div class="function-icon">
+                                            <a href="#"><i class="fa-regular fa-heart"><div class="tooltip">Yêu Thích</div></i></a>
+                                            <a href="#" ><i class="fa-solid fa-magnifying-glass"><div class="tooltip">Xem Nhanh</div></i></a>
+                                        </div>
+                                        <div class="function-buy">
+                                            <div class="function-buy-boder">
+                                                <button onclick="buy(this)"><span>Mua Hàng</span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-info-id">
+                                        <span>ID:13502862</span>
+                                        <div class="product-info-rate">
+                                            <i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <h3><a href="#">Đàn Bắc Kinh Nhật xinh xắn</a></h3>
+                                    <p>5.000.000₫</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="article-iteam">
+                            <div class="product-iteam">
+                                <div class="product-thumb">
+                                    <div class="product-thumb-img"><a href="#">
+                                        <div class="img">
+                                            <img src="../IMG/ThuCung/ThuCung08.jpg" alt="img" width="270px" height="270px">
+                                        </div>
+                                        </a>
+                                        <div class="function-icon">
+                                            <a href="#"><i class="fa-regular fa-heart"><div class="tooltip">Yêu Thích</div></i></a>
+                                            <a href="#" ><i class="fa-solid fa-magnifying-glass"><div class="tooltip">Xem Nhanh</div></i></a>
+                                        </div>
+                                        <div class="function-buy">
+                                            <div class="function-buy-boder">
+                                                <button onclick="buy(this)"><span>Mua Hàng</span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-info-id">
+                                        <span>ID:11564578</span>
+                                        <div class="product-info-rate">
+                                            <i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <h3><a href="#">ALASKA ĐEN TRẮNG XINH</a></h3>
+                                    <p>12.000.000₫</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="article-iteam">
+                            <div class="product-iteam">
+                                <div class="product-thumb">
+                                    <div class="product-thumb-img"><a href="#">
+                                        <div class="img">
+                                            <img src="../IMG/ThuCung/ThuCung09.jpg" alt="img" width="270px" height="270px">
+                                        </div>
+                                        </a>
+                                        <div class="function-icon">
+                                            <a href="#"><i class="fa-regular fa-heart"><div class="tooltip">Yêu Thích</div></i></a>
+                                            <a href="#" ><i class="fa-solid fa-magnifying-glass"><div class="tooltip">Xem Nhanh</div></i></a>
+                                        </div>
+                                        <div class="function-buy">
+                                            <div class="function-buy-boder">
+                                                <button onclick="buy(this)"><span>Mua Hàng</span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-info-id">
+                                        <span>ID:SP00067</span>
+                                        <div class="product-info-rate">
+                                            <i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <h3><a href="#">Alaska hồng phấn siêu cưng</a></h3>
+                                    <p>20.000.000₫</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="article-product">
+                        <div class="article-iteam">
+                            <div class="product-iteam">
+                                <div class="product-thumb">
+                                    <div class="product-thumb-img"><a href="#">
+                                        <div class="img">
+                                            <img src="../IMG/ThuCung/ThuCung10.jpg" alt="img" width="270px" height="270px">
+                                        </div>
+                                        </a>
+                                        <div class="function-icon">
+                                            <a href="#"><i class="fa-regular fa-heart"><div class="tooltip">Yêu Thích</div></i></a>
+                                            <a href="#" ><i class="fa-solid fa-magnifying-glass"><div class="tooltip">Xem Nhanh</div></i></a>
+                                        </div>
+                                        <div class="function-buy">
+                                            <div class="function-buy-boder">
+                                                <button onclick="buy(this)"><span>Mua Hàng</span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-info-id">
+                                        <span>ID:SP00032</span>
+                                        <div class="product-info-rate">
+                                            <i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <h3><a href="#">HUSKY SIÊU CUTE</a></h3>
+                                    <p>12.000.000₫</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="article-iteam">
+                            <div class="product-iteam">
+                                <div class="product-thumb">
+                                    <div class="product-thumb-img"><a href="#">
+                                        <div class="img">
+                                            <img src="../IMG/ThuCung/ThuCung11.jpg" alt="img" width="270px" height="270px">
+                                        </div>
+                                        </a>
+                                        <div class="function-icon">
+                                            <a href="#"><i class="fa-regular fa-heart"><div class="tooltip">Yêu Thích</div></i></a>
+                                            <a href="#" ><i class="fa-solid fa-magnifying-glass"><div class="tooltip">Xem Nhanh</div></i></a>
+                                        </div>
+                                        <div class="function-buy">
+                                            <div class="function-buy-boder">
+                                                <button onclick="buy(this)"><span>Mua Hàng</span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-info-id">
+                                        <span>ID:SP00005</span>
+                                        <div class="product-info-rate">
+                                            <i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <h3><a href="#">ALASKA HỒNG PHẤN</a></h3>
+                                    <p>20.000.000₫</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="article-iteam">
+                            <div class="product-iteam">
+                                <div class="product-thumb">
+                                    <div class="product-thumb-img"><a href="#">
+                                        <div class="img">
+                                            <img src="../IMG/ThuCung/ThuCung12.jpeg" alt="img" width="270px" height="270px">
+                                        </div>
+                                        </a>
+                                        <div class="function-icon">
+                                            <a href="#"><i class="fa-regular fa-heart"><div class="tooltip">Yêu Thích</div></i></a>
+                                            <a href="#" ><i class="fa-solid fa-magnifying-glass"><div class="tooltip">Xem Nhanh</div></i></a>
+                                        </div>
+                                        <div class="function-buy">
+                                            <div class="function-buy-boder">
+                                                <button onclick="buy(this)"><span>Mua Hàng</span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-info-id">
+                                        <span>ID:SP00028</span>
+                                        <div class="product-info-rate">
+                                            <i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <h3><a href="#">ALASKA XIU CƯNG</a></h3>
+                                    <p>18.000.000₫</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="next-page">
+                    <a href="http://127.0.0.1:3000/DuAn/MatPetFamily/HTML/PhuKien.html" class="function-next">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </a>
+                    <a href="http://127.0.0.1:3000/DuAn/MatPetFamily/HTML/PhuKien.html">1</a>
+                    <span class="next-page-one">2</span>
+                    <a href="#">3</a>
+                    <span>...</span>
+                    <a href="">19</a>
+                    <a href="">20</a>
+                    <a href="" class="function-next">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                </div>
+            </article>
+        </section>
+    </main>
+    <div class="footer-slide">
+        <div class="footer-slide-iteam">
+            <div class="iteam">
+                <div class="iteam-info">
+                    <a href="#">
+                        <img src="../IMG/TrangChu/TrangChu49.png" alt="img" width="150px" height="185px">
+                    </a>
+                    <div class="info-adv-footer">
+                        <h3 class="title18">Jack Russel</h3>
+                        <p class="desc"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="iteam">
+                <div class="iteam-info">
+                    <a href="#">
+                        <img src="../IMG/TrangChu/TrangChu50.png" alt="img" width="150px" height="185px">
+                    </a>
+                    <div class="info-adv-footer">
+                        <h3 class="title18">Parson Russel</h3>
+                        <p class="desc"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="iteam">
+                <div class="iteam-info">
+                    <a href="#">
+                        <img src="../IMG/TrangChu/TrangChu51.png" alt="img" width="150px" height="185px">
+                    </a>
+                    <div class="info-adv-footer">
+                        <h3 class="title18">Golden Retriever</h3>
+                        <p class="desc"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="iteam">
+                <div class="iteam-info">
+                    <a href="#">
+                        <img src="../IMG/TrangChu/TrangChu52.png" alt="img" width="150px" height="185px">
+                    </a>
+                    <div class="info-adv-footer">
+                        <h3 class="title18">Yorkie</h3>
+                        <p class="desc"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="iteam">
+                <div class="iteam-info">
+                    <a href="#">
+                        <img src="../IMG/TrangChu/TrangChu53.png" alt="img" width="150px" height="185px">
+                    </a>
+                    <div class="info-adv-footer">
+                        <h3 class="title18">Bull Pháp</h3>
+                        <p class="desc"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="iteam">
+                <div class="iteam-info">
+                    <a href="#">
+                        <img src="../IMG/TrangChu/TrangChu54.png" alt="img" width="150px" height="185px">
+                    </a>
+                    <div class="info-adv-footer">
+                        <h3 class="title18">Bull Pháp</h3>
+                        <p class="desc"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="iteam">
+                <div class="iteam-info">
+                    <a href="#">
+                        <img src="../IMG/TrangChu/TrangChu55.png" alt="img" width="150px" height="185px">
+                    </a>
+                    <div class="info-adv-footer">
+                        <h3 class="title18">Beagle</h3>
+                        <p class="desc">Chó săn thỏ</p>
+                    </div>
+                </div>
+            </div>
+            <div class="iteam">
+                <div class="iteam-info">
+                    <a href="#">
+                        <img src="../IMG/TrangChu/TrangChu56.png" alt="img" width="150px" height="185px">
+                    </a>
+                    <div class="info-adv-footer">
+                        <h3 class="title18">PUG</h3>
+                        <p class="desc">Móm mũm mĩm</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="thongtin">
+        <div class="function-thongtin">
+            <div class="lienlac">
+                <div class="address">
+                    <h2>Liên Lạc</h2>
+                    <div class="contact-address">
+                        <p><i class="fa-regular fa-map"></i><strong>Địa Chỉ:</strong> Số 168 Thượng Đình - Thanh Xuân - Hà Nội</p>
+                        <p><i class="fa-regular fa-map"></i><strong>Địa Chỉ: </strong>294 -296 Đồng Đen - Quận Tân Bình - Hồ Chí Minh</p>
+                        <p><i class="fa-solid fa-phone-volume"></i><strong>Điện thoại</strong>: <a href="tel:0939.86.36.96">0939.86.36.96</a></p>
+                        <p><i class="fa-solid fa-envelope"></i><strong>Email</strong>: <a href="#">matpetfamily2011@gmail.com</a></p>
+                    </div>
+                </div>
+                <div class="follow">
+                    <h2>FOLLOW</h2>
+                    <div class="icon-network">
+                        <a href=""><i class="fa-brands fa-facebook"></i></a>
+                        <a href=""><i class="fa-brands fa-youtube"></i></a>
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="instagram">
+                <h2>INSTAGRAM</h2>
+                <a href="https://www.instagram.com/matpetfamily/"><img src="../IMG/Screenshot 2024-06-16 020949.png" alt="" width="300px"></a>
+            </div>
+            <div class="facebook">
+                <h2>FACEBOOK</h2>
+                <div class="contact-facebook">
+                    <img src="../IMG/TrangChu/TrangChu01.jpg" alt="">
+                    <div class="info-facebook">
+                        <p>Mật Pet Family</p>
+                        <button type="button"><a href="https://www.facebook.com/matpetfamily"><i class="fa-brands fa-facebook" style="color: blue;"></i> Theo Dõi Trang </a></button><span> 237K người</span>
+                    </div>
+                </div>
+            </div>
+            <div class="youtube">
+                <h2>YOUTUBE</h2>
+                <iframe width="270" height="152" src="https://www.youtube.com/embed/05IY4eEbH4w" title="Mật Pet Chất Chơi Khai Trương Shop TO NHẤT HCM - Rộng 200m2 Thế Này Ai Chơi Lại Ahihi" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+    <div class="phone">
+        <a id="hotline" href="tel:0978320093">
+            <img src="../IMG/LienHe5.png" width="200" height="200">
+        </a>
+    </div>
+    <div class="network">
+        <ul>
+            <li><a href="http://127.0.0.1:3000/DuAn/MatPetFamily/TrangChu.html"><img src="../IMG/LienHe1 (1).png" alt=""></a></li>
+            <li><a href="https://chat.zalo.me/"><img src="../IMG/LienHe2.png" alt=""></a></li>
+            <li><a href="https://www.facebook.com/quochuy.doan.75248"><img src="../IMG/LienHe3.png" alt=""></a></li>
+            <li><a href="tel:0978320093"><img src="../IMG/LienHe4.png" alt=""></a></li>
+        </ul>
+    </div>
+    <footer>
+        <div class="contact-footer">
+            <img src="../IMG/TrangChu/TrangChu08.png" alt="logo" width="90" height="90">
+            <div class="contact">
+                <ul>
+                    <li><a href="">Chính sách</a></li>
+                    <li><a href="">Terms & Conditions</a></li>
+                    <li><a href="">Cookies</a></li>
+                    <li><a href="">Blog</a></li>
+                    <li><a href="">Thông tin</a></li>
+                    <li><a href="">Site Map</a></li>
+                </ul>
+                <p>@2019 - Design by: Mat Pet Team</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../JS/ChuyenAnh.js"></script>
+    <script src="../JS/GioHang.js"></script>
+</body>
+</html>

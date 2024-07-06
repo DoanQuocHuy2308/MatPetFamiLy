@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh Mục Chó</title>
+    <link rel="shortcut icon" href="../IMG/TrangChu08.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../CSS/QuanTri.css">      
+    <script src="https://kit.fontawesome.com/3e2bcf7815.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <img src="../IMG/TrangChu/mật-pet-logo-300x297.png" width="40%" alt="logo">
+            <p id="Name"></p>
+        </div>
+        <div class="header-function">
+            <ul>
+                <li style="background-color: #fff;"><a style="color: #de8ebe;" href="http://127.0.0.1:3000/DuAn/MatPetFamily/DanhMucCho.html">DANH MỤC CHÓ</a></li>
+                <li><a href="http://127.0.0.1:3000/DuAn/MatPetFamily/HTML/DanhMucMeo.html">DANH MỤC MÈO</a></li>
+                <li><a href="http://127.0.0.1:3000/DuAn/MatPetFamily/HTML/DanhMucPhuKien.html">PHỤ KIỆN</a></li>
+                <li><a href="http://127.0.0.1:3000/DuAn/MatPetFamily/HTML/DanhMucThucAn.html">THỰC ĂN</a></li>
+                <li><a href="http://127.0.0.1:3000/DuAn/MatPetFamily/HTML/DanhMucDichVu.html">DỊCH VỤ</a></li>
+            </ul>
+        </div>
+    </header>
+    <section>
+        <div class="section-top">
+            <ul>
+                <li><i class="fa-brands fa-facebook"></i><a href="https://www.facebook.com/quochuy.doan.75248"> Doãn Quốc Huy</a></li>
+                <li><i class="fa-solid fa-phone-volume"></i> 0978320093</li>
+                <li><i class="fa-solid fa-right-from-bracket"></i><a href="http://127.0.0.1:3000/DuAn/MatPetFamily/HTML/DangNhap.html"> Đăng Xuất</a></li>
+            </ul>
+        </div>
+        <div class="main">
+            <div class="main-function">
+                <div class="function-search">
+                    <input type="text" id="search" placeholder="Search" onkeyup="Search(event)"><button><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <div class="function">
+                    <button class="ThemDulieu" onclick="ThemDuLieu()">Thêm Dữ Liệu</button>
+                    <div id="formthemdulieu">
+                        <button class="close" onclick="dongform()"><i class="fa-regular fa-circle-xmark"></i></button>
+                        <form id="form">
+                            <ul>
+                                <li>
+                                    <label for="STT">STT</label>
+                                    <input type="text" id="STT" placeholder="Nhập STT" required></li>
+                                <li>
+                                    <label for="Ten">Tên</label>
+                                    <input type="text" id="Ten" placeholder="Nhập Tên Bé" maxlength="50" required>
+                                </li>
+                                <li>
+                                    <label for="DanhMuc">Danh Mục</label>
+                                    <input type="text" id="DanhMuc" placeholder="Nhập Danh Mục" maxlength="50" required></li>
+                                <li>
+                                    <label for="SoLuong">Số Lượng</label>
+                                    <input type="text" id="SoLuong" placeholder="Nhập Số Lượng" maxlength="3" required>
+                                </li>
+                                <li>
+                                    <label for="Gia">Giá</label>
+                                    <input type="text" id="Gia" placeholder="Nhập Giá" maxlength="50" required>
+                                </li>
+                                <li>
+                                    <label for="IMG">Ảnh</label>
+                                <input type="file" id="IMG">
+                                </li>
+                            </ul>
+                            <button type="button" onclick="add(this)"><i class="fa-regular fa-square-plus" style="font-size: 30px; color: #fff;"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="caption">
+                <span>Bảng Danh Sách</span>
+            </div>
+            <div class="main-dulieu">
+                <table id="table">
+                    <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>Tên</th>
+                            <th>Danh Mục</th>
+                            <th>Số Lượng</th>
+                            <th>Giá </th>
+                            <th>Ảnh</th>
+                            <th colspan="2">Tác Vụ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Golden Cái Ú</td>
+                            <td>Chó</td>
+                            <td>10</td>
+                            <td>18.000.000 đ</td>
+                            <td><img src="../IMG/TrangChu/TrangChu18.jpg" width="100px" alt="ảnh"></td>
+                            <td>
+                                <div class="action-container">
+                                    <button type="button" onclick="Update(this)"><i class="fa-regular fa-pen-to-square"></i></button>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="action-container">
+                                    <button type="button" onclick="Delete(this)"><i class="fa-solid fa-trash-can"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <script src="../JS/QuanTri.js"></script>
+</body>
+</html>
