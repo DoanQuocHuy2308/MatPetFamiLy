@@ -58,5 +58,5 @@ function DatHang() {
 
     // Nếu các điều kiện đều hợp lệ, thông báo "Đặt hàng thành công" và chuyển hướng trang
     alert("Đặt hàng thành công");
-    window.location.href = "http://127.0.0.1:3000/DuAn/MatPetFamily/HTML/TrangChu.html";.
+    window.location.href = "http://127.0.0.1:3000/DuAn/MatPetFamily/HTML/TrangChu.html";
 }
